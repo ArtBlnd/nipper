@@ -39,6 +39,8 @@ mod traversal;
 
 pub use document::Document;
 pub use dom_tree::Node;
+pub use dom_tree::NodeData;
+pub use dom_tree::Element;
 #[doc(hidden)]
 pub use dom_tree::NodeId;
 pub use dom_tree::NodeRef;
