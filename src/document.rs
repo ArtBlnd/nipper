@@ -60,6 +60,10 @@ impl Document {
     pub fn root(&self) -> NodeRef<NodeData> {
         self.tree.root()
     }
+
+    pub fn get_node(&self, node_id: &NodeId) -> Option<NodeRef<NodeData>> {
+        self.tree.get(node_id)
+    }
 }
 
 impl TreeSink for Document {
