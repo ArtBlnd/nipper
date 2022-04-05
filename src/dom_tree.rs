@@ -1059,6 +1059,12 @@ impl<'a> Serialize for SerializableNodeRef<'a> {
                             ops.insert(0, SerializeOp::Open(child_id));
                         }
 
+                        if let Some(template_contents) = e.template_contents {
+                            for child_id in children_of!(nodes, template_contents).into_iter().rev() {
+                                ops.insert(0, SerializeOp::Open(child_id));
+                            }
+                        }
+
                         Ok(())
                     }
                     NodeData::Doctype { ref name, .. } => serializer.write_doctype(&name),
